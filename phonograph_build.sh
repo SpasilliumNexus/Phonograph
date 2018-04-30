@@ -26,6 +26,7 @@ function clean_source {
   echo -e $COL_BLUE"Cleaning out the previous application build..."$COL_RESET
   export ANDROID_HOME=$ANDROID_SDK
   ./gradlew clean
+  git clean -xfd
 }
 
 function confirm_build {
@@ -60,6 +61,7 @@ function confirm_sign {
 }
 
 function finish_build {
+  for file in $OUTPUT_DIR/app-release-* ; do mv $file ${file//app-release/$PACKAGENAME-$VERSIONCODE} ; done
   echo ""
   echo -e $COL_GREEN"Build of Phonograph completed in $OUTPUT_DIR"$COL_RESET
   exit 0
@@ -72,7 +74,7 @@ function quit_script {
 
 
 # Confirm cleaning before building
-if [ -d .gradle ] || [ -d app ] || [ -d build ]; then
+if [ -d .gradle ] || [ -d build ]; then
   while read -p "Do you want to clean out the source before building? (yes/no) " dchoice
     do
       case "$dchoice" in
