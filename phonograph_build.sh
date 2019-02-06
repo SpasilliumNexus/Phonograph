@@ -13,10 +13,10 @@ COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 
 # Configure variables
-BUILD_TOOLS=$HOME/Android/android-sdk/build-tools/27.0.3
-OUTPUT_DIR=$HOME/Development/phonograph/app/build/outputs/apk/release
-SIGNING_KEY=$HOME/Android/signing-keys/app_signing_key.jks
-ANDROID_SDK=$HOME/Android/android-sdk
+BUILD_TOOLS=$HOME/android/android-sdk/build-tools/28.0.3
+OUTPUT_DIR=$HOME/development/phonograph/app/build/outputs/apk/release
+SIGNING_KEY=$HOME/android/signing-keys/app_signing_key.jks
+ANDROID_SDK=$HOME/android/android-sdk
 
 reset
 
